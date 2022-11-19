@@ -1,0 +1,2 @@
+docker run -it -v $(pwd)/data:/data -v $(pwd)/scripts:/scripts access2sqlite:latest bash -c "python scripts/main.py"
+

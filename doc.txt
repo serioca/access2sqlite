@@ -1,0 +1,2 @@
+link utili
+https://stackoverflow.com/questions/53687786/how-can-i-convert-an-ms-access-database-mdb-file-to-an-sqlite
