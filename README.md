@@ -22,9 +22,14 @@ docker must be installed
 git clone https://github.com/serioca/access2sqlite
 cd access2sqlite
 ./docker-build
-cp <your-access-db-file>.mdb ./data
+cp [your-access-db-file].mdb ./data
+cp [another-access-db-file].mdb ./data
 ./docker-run
 ```
 
+the tool will create for each `[file].mdb` present in the directory `./data` a new converted `[file].sqlite` :
 
+`[your-access-db-file].sqlite`
+
+`[another-access-db-file].sqlite`
 
