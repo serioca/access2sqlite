@@ -10,7 +10,7 @@ for access_file in access_files:
     sqlite_file = join("./data", os.path.splitext(access_file)[0]+'.sqlite')
 
     if os.path.isfile(sqlite_file):
-        print(f"file {sqlite_file} già esiste!!! scartato")
+        print(f"file {sqlite_file} already exist!!! discarded")
         continue
 
     engine = create_engine('sqlite:///{0}'.format(join("./data", os.path.splitext(access_file)[0]+'.sqlite')), echo=False)
@@ -22,11 +22,11 @@ for access_file in access_files:
             table = mdb.read_table(join("./data", access_file), tbl, encoding='ascii')
             tables[tbl] = table
         except:
-            print(f"tabella {tbl} di {access_file} scartata. non riesco a leggerla")
+            print(f"table {tbl} of database {access_file} discarded. could not be read ..")
             continue
 
     for tab in tables:
-        print(f"tabella {tab} di  {access_file} trasferita in {sqlite_file}")
+        print(f"table {tab} of DB {access_file} imported into DB {sqlite_file}")
         tables[tab].to_sql(tab, con=engine)
 
-    print(f"file {sqlite_file} creato")
+    print(f"file {sqlite_file} created")
