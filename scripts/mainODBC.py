@@ -10,6 +10,7 @@ drivers = pyodbc.drivers()
 requested_driver = 'Microsoft Access Driver (*.mdb, *.accdb)'
 if not requested_driver in drivers:
     print(f"Missing requested driver {requested_driver} exit")
+    exit(0)
 
 conn_str = (r'DRIVER={Microsoft Access Driver (*.mdb, *.accdb)};'
             r'DBQ=.\data\VIARIO.accdb;')
